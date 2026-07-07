@@ -1,0 +1,4 @@
+$kind: collection
+description: Coleccion de pruebas funcionales para la API RESTful de solicitudes de soporte tecnico (IDAT).
+variables:
+  base_url: http://localhost:8080

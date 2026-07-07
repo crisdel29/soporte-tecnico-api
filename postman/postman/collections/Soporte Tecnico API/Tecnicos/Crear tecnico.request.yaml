@@ -1,0 +1,14 @@
+$kind: http-request
+url: "{{base_url}}/api/tecnicos"
+method: POST
+headers:
+  Content-Type: application/json
+body:
+  type: text
+  content: |-
+    {
+      "nombre": "Luis Fernandez",
+      "especialidad": "Redes y Servidores",
+      "email": "luis.fernandez@empresa.com"
+    }
+order: 1000

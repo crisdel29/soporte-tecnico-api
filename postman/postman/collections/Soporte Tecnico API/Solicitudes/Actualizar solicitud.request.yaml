@@ -1,0 +1,15 @@
+$kind: http-request
+url: "{{base_url}}/api/solicitudes/1"
+method: PUT
+headers:
+  Content-Type: application/json
+body:
+  type: text
+  content: |-
+    {
+      "titulo": "No enciende el servidor (actualizado)",
+      "descripcion": "Se reinicio pero sigue sin responder",
+      "clienteId": 1,
+      "tecnicoId": 1
+    }
+order: 5000

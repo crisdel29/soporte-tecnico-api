@@ -1,0 +1,14 @@
+$kind: http-request
+url: "{{base_url}}/api/clientes"
+method: POST
+headers:
+  Content-Type: application/json
+body:
+  type: text
+  content: |-
+    {
+      "nombre": "Ana Torres",
+      "email": "ana.torres@correo.com",
+      "telefono": "987654321"
+    }
+order: 1000

@@ -1,0 +1,11 @@
+# Use this workspace to collaborate
+workspace:
+  id: 8b9a3985-72de-4531-9da3-7df742df0470
+
+localResources:
+  collections:
+    - ../Soporte-Tecnico-API.postman_collection.json
+
+cloudResources:
+  collections:
+    ../postman/collections/Soporte Tecnico API: 267070da-3517-40ac-967e-59eb90e18288

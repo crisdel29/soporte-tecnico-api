@@ -1,0 +1,15 @@
+$kind: http-request
+url: "{{base_url}}/api/solicitudes"
+method: POST
+headers:
+  Content-Type: application/json
+body:
+  type: text
+  content: |-
+    {
+      "titulo": "No enciende el servidor",
+      "descripcion": "El servidor principal no responde desde esta manana",
+      "clienteId": 1,
+      "tecnicoId": 1
+    }
+order: 1000

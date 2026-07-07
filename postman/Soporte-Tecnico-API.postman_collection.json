@@ -1,0 +1,175 @@
+{
+  "info": {
+    "name": "Soporte Tecnico API",
+    "description": "Coleccion de pruebas funcionales para la API RESTful de solicitudes de soporte tecnico (IDAT).",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    { "key": "base_url", "value": "http://localhost:8080" }
+  ],
+  "item": [
+    {
+      "name": "Clientes",
+      "item": [
+        {
+          "name": "Crear cliente",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nombre\": \"Ana Torres\",\n  \"email\": \"ana.torres@correo.com\",\n  \"telefono\": \"987654321\"\n}"
+            },
+            "url": "{{base_url}}/api/clientes"
+          }
+        },
+        {
+          "name": "Listar clientes",
+          "request": { "method": "GET", "url": "{{base_url}}/api/clientes" }
+        },
+        {
+          "name": "Obtener cliente por id",
+          "request": { "method": "GET", "url": "{{base_url}}/api/clientes/1" }
+        },
+        {
+          "name": "Actualizar cliente",
+          "request": {
+            "method": "PUT",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nombre\": \"Ana Torres Ramos\",\n  \"email\": \"ana.torres@correo.com\",\n  \"telefono\": \"987000000\"\n}"
+            },
+            "url": "{{base_url}}/api/clientes/1"
+          }
+        },
+        {
+          "name": "Eliminar cliente",
+          "request": { "method": "DELETE", "url": "{{base_url}}/api/clientes/1" }
+        },
+        {
+          "name": "Error - crear cliente sin email (validacion)",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nombre\": \"Cliente sin email\"\n}"
+            },
+            "url": "{{base_url}}/api/clientes"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Tecnicos",
+      "item": [
+        {
+          "name": "Crear tecnico",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nombre\": \"Luis Fernandez\",\n  \"especialidad\": \"Redes y Servidores\",\n  \"email\": \"luis.fernandez@empresa.com\"\n}"
+            },
+            "url": "{{base_url}}/api/tecnicos"
+          }
+        },
+        {
+          "name": "Listar tecnicos",
+          "request": { "method": "GET", "url": "{{base_url}}/api/tecnicos" }
+        },
+        {
+          "name": "Obtener tecnico por id",
+          "request": { "method": "GET", "url": "{{base_url}}/api/tecnicos/1" }
+        },
+        {
+          "name": "Actualizar tecnico",
+          "request": {
+            "method": "PUT",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nombre\": \"Luis Fernandez Diaz\",\n  \"especialidad\": \"Redes, Servidores y Cloud\",\n  \"email\": \"luis.fernandez@empresa.com\"\n}"
+            },
+            "url": "{{base_url}}/api/tecnicos/1"
+          }
+        },
+        {
+          "name": "Eliminar tecnico",
+          "request": { "method": "DELETE", "url": "{{base_url}}/api/tecnicos/1" }
+        }
+      ]
+    },
+    {
+      "name": "Solicitudes",
+      "item": [
+        {
+          "name": "Crear solicitud",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"titulo\": \"No enciende el servidor\",\n  \"descripcion\": \"El servidor principal no responde desde esta manana\",\n  \"clienteId\": 1,\n  \"tecnicoId\": 1\n}"
+            },
+            "url": "{{base_url}}/api/solicitudes"
+          }
+        },
+        {
+          "name": "Listar solicitudes",
+          "request": { "method": "GET", "url": "{{base_url}}/api/solicitudes" }
+        },
+        {
+          "name": "Listar solicitudes por estado",
+          "request": { "method": "GET", "url": "{{base_url}}/api/solicitudes?estado=PENDIENTE" }
+        },
+        {
+          "name": "Obtener solicitud por id",
+          "request": { "method": "GET", "url": "{{base_url}}/api/solicitudes/1" }
+        },
+        {
+          "name": "Actualizar solicitud",
+          "request": {
+            "method": "PUT",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"titulo\": \"No enciende el servidor (actualizado)\",\n  \"descripcion\": \"Se reinicio pero sigue sin responder\",\n  \"clienteId\": 1,\n  \"tecnicoId\": 1\n}"
+            },
+            "url": "{{base_url}}/api/solicitudes/1"
+          }
+        },
+        {
+          "name": "Cambiar estado a EN_PROCESO",
+          "request": { "method": "PATCH", "url": "{{base_url}}/api/solicitudes/1/estado?estado=EN_PROCESO" }
+        },
+        {
+          "name": "Cambiar estado a RESUELTA",
+          "request": { "method": "PATCH", "url": "{{base_url}}/api/solicitudes/1/estado?estado=RESUELTA" }
+        },
+        {
+          "name": "Eliminar solicitud",
+          "request": { "method": "DELETE", "url": "{{base_url}}/api/solicitudes/1" }
+        },
+        {
+          "name": "Error - solicitud con cliente inexistente",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"titulo\": \"Prueba error\",\n  \"descripcion\": \"Cliente que no existe\",\n  \"clienteId\": 999\n}"
+            },
+            "url": "{{base_url}}/api/solicitudes"
+          }
+        },
+        {
+          "name": "Error - solicitud inexistente (404)",
+          "request": { "method": "GET", "url": "{{base_url}}/api/solicitudes/999" }
+        }
+      ]
+    }
+  ]
+}

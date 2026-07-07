@@ -1,0 +1,14 @@
+$kind: http-request
+url: "{{base_url}}/api/tecnicos/1"
+method: PUT
+headers:
+  Content-Type: application/json
+body:
+  type: text
+  content: |-
+    {
+      "nombre": "Luis Fernandez Diaz",
+      "especialidad": "Redes, Servidores y Cloud",
+      "email": "luis.fernandez@empresa.com"
+    }
+order: 4000

@@ -1,0 +1,6 @@
+$kind: http-request
+url: "{{base_url}}/api/solicitudes/1/estado?estado=EN_PROCESO"
+method: PATCH
+queryParams:
+  estado: EN_PROCESO
+order: 6000

@@ -1,0 +1,14 @@
+$kind: http-request
+url: "{{base_url}}/api/solicitudes"
+method: POST
+headers:
+  Content-Type: application/json
+body:
+  type: text
+  content: |-
+    {
+      "titulo": "Prueba error",
+      "descripcion": "Cliente que no existe",
+      "clienteId": 999
+    }
+order: 9000
