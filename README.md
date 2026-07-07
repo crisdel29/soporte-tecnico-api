@@ -174,9 +174,7 @@ Pasos:
 
 | Integrante | Rol / Responsabilidad |
 |---|---|
-| Integrante 1 | Modelado de clases y capa `repository` |
-| Integrante 2 | Capa `service` y lógica de negocio |
-| Integrante 3 | Capa `controller`, manejo de excepciones, documentación y pruebas |
+| Cristhian Paolo Moreno Silva | Modelado de clases y capa `repository` / Capa `service` y lógica de negocio /Capa `controller`, manejo de excepciones, documentación y pruebas |
 
 ## 9. Autores
-Equipo de desarrollo backend — Escuela de Tecnología, IDAT.
+Cristhian Paolo Moreno Silva
